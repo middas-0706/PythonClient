@@ -8,19 +8,24 @@ from typing import Any, ClassVar, Dict, List, Optional, Union
 from typing import Optional, Set, Any, Dict, List
 from typing_extensions import Self
 
-from dataforseo_client.models.on_page_resource_issue_item_info import OnPageResourceIssueItemInfo
 
 
 
-class OnPageResourceIssueInfo(BaseModel):
+class ContententRatingInfo(BaseModel):
     """
-    OnPageResourceIssueInfo
+    ContententRatingInfo
     """ # noqa: E501
-    errors: Optional[List[Optional[OnPageResourceIssueItemInfo]]] = Field(default=None, description=r"resource errors")
-    warnings: Optional[List[Optional[OnPageResourceIssueItemInfo]]] = Field(default=None, description=r"resource warnings")
+    name: Optional[StrictStr] = Field(default=None, description=r"rating name. here you can find the following elements: Max5, Percents, CustomMax")
+    rating_value: Optional[StrictFloat] = Field(default=None, description=r"the value of the rating")
+    rating_count: Optional[StrictInt] = Field(default=None, description=r"number of votes")
+    max_rating_value: Optional[StrictFloat] = Field(default=None, description=r"maximum value for the rating name")
+    relative_rating: Optional[StrictFloat] = Field(default=None, description=r"relative rating")
     __properties: ClassVar[List[str]] = [
-        "errors", 
-        "warnings", 
+        "name", 
+        "rating_value", 
+        "rating_count", 
+        "max_rating_value", 
+        "relative_rating", 
         ]
 
     additional_properties: Dict[str, Any] = Field(default_factory=dict)
@@ -47,18 +52,11 @@ class OnPageResourceIssueInfo(BaseModel):
 
         _dict = {}
 
-        errors_items = []
-        if self.errors:
-            for _item in self.errors:
-                if _item:
-                    errors_items.append(_item.to_dict())
-            _dict['errors'] = errors_items
-        warnings_items = []
-        if self.warnings:
-            for _item in self.warnings:
-                if _item:
-                    warnings_items.append(_item.to_dict())
-            _dict['warnings'] = warnings_items
+        _dict['name'] = self.name
+        _dict['rating_value'] = self.rating_value
+        _dict['rating_count'] = self.rating_count
+        _dict['max_rating_value'] = self.max_rating_value
+        _dict['relative_rating'] = self.relative_rating
         return _dict
 
 
@@ -71,8 +69,11 @@ class OnPageResourceIssueInfo(BaseModel):
             return cls.model_validate(obj)
 
         _obj = cls.model_validate({
-            "errors": [OnPageResourceIssueItemInfo.from_dict(_item) for _item in obj["errors"]] if obj.get("errors") is not None else None,
-            "warnings": [OnPageResourceIssueItemInfo.from_dict(_item) for _item in obj["warnings"]] if obj.get("warnings") is not None else None,
+            "name": obj.get("name"),
+            "rating_value": obj.get("rating_value"),
+            "rating_count": obj.get("rating_count"),
+            "max_rating_value": obj.get("max_rating_value"),
+            "relative_rating": obj.get("relative_rating"),
         })
 
         additional_properties = {k: v for k, v in obj.items() if k not in cls.__properties}

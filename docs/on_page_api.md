@@ -1423,6 +1423,7 @@ try:
 
         response = on_page_api.instant_pages([OnPageInstantPagesRequestInfo(
                 url="https://dataforseo.com/blog",
+                enable_javascript=True,
                 custom_js="meta = {}; meta.url = document.URL; meta;",
         )]
         )
