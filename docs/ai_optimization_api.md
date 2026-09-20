@@ -28,6 +28,8 @@ All URIs are relative to *https://api.dataforseo.com*
 [**geminiLlmResponsesTasksReady**](AiOptimizationApi.md#geminiLlmResponsesTasksReady) | **GET**  /v3/ai_optimization/gemini/llm_responses/tasks_ready  |
 [**geminiLlmResponsesTaskGet**](AiOptimizationApi.md#geminiLlmResponsesTaskGet) | **GET**  /v3/ai_optimization/gemini/llm_responses/task_get/{id}  |
 [**geminiLlmResponsesLive**](AiOptimizationApi.md#geminiLlmResponsesLive) | **POST**  /v3/ai_optimization/gemini/llm_responses/live  |
+[**perplexityLlmResponsesModels**](AiOptimizationApi.md#perplexityLlmResponsesModels) | **GET**  /v3/ai_optimization/perplexity/llm_responses/models  |
+[**perplexityLlmResponsesLive**](AiOptimizationApi.md#perplexityLlmResponsesLive) | **POST**  /v3/ai_optimization/perplexity/llm_responses/live  |
 [**geminiLlmScraperLocations**](AiOptimizationApi.md#geminiLlmScraperLocations) | **GET**  /v3/ai_optimization/gemini/llm_scraper/locations  |
 [**geminiLlmScraperLanguages**](AiOptimizationApi.md#geminiLlmScraperLanguages) | **GET**  /v3/ai_optimization/gemini/llm_scraper/languages  |
 [**geminiLlmScraperTaskPost**](AiOptimizationApi.md#geminiLlmScraperTaskPost) | **POST**  /v3/ai_optimization/gemini/llm_scraper/task_post  |
@@ -36,8 +38,6 @@ All URIs are relative to *https://api.dataforseo.com*
 [**geminiLlmScraperTaskGetHtml**](AiOptimizationApi.md#geminiLlmScraperTaskGetHtml) | **GET**  /v3/ai_optimization/gemini/llm_scraper/task_get/html/{id}  |
 [**geminiLlmScraperLiveAdvanced**](AiOptimizationApi.md#geminiLlmScraperLiveAdvanced) | **POST**  /v3/ai_optimization/gemini/llm_scraper/live/advanced  |
 [**geminiLlmScraperLiveHtml**](AiOptimizationApi.md#geminiLlmScraperLiveHtml) | **POST**  /v3/ai_optimization/gemini/llm_scraper/live/html  |
-[**perplexityLlmResponsesModels**](AiOptimizationApi.md#perplexityLlmResponsesModels) | **GET**  /v3/ai_optimization/perplexity/llm_responses/models  |
-[**perplexityLlmResponsesLive**](AiOptimizationApi.md#perplexityLlmResponsesLive) | **POST**  /v3/ai_optimization/perplexity/llm_responses/live  |
 [**aiKeywordDataAvailableFilters**](AiOptimizationApi.md#aiKeywordDataAvailableFilters) | **GET**  /v3/ai_optimization/ai_keyword_data/available_filters  |
 [**aiKeywordDataLocationsAndLanguages**](AiOptimizationApi.md#aiKeywordDataLocationsAndLanguages) | **GET**  /v3/ai_optimization/ai_keyword_data/locations_and_languages  |
 [**aiKeywordDataKeywordsSearchVolumeLive**](AiOptimizationApi.md#aiKeywordDataKeywordsSearchVolumeLive) | **POST**  /v3/ai_optimization/ai_keyword_data/keywords_search_volume/live  |
@@ -1469,6 +1469,132 @@ except ApiException as e:
 |-------------|-------------|------------------|
 | **200** | Successful operation |  -  |
 
+<a id="perplexityLlmResponsesModels"></a>
+# **perplexityLlmResponsesModels**
+> AiOptimizationPerplexityLlmResponsesModelsResponseInfo perplexityLlmResponsesModels()
+
+
+### Example
+```python
+from dataforseo_client import configuration as dfs_config, api_client as dfs_api_provider
+from dataforseo_client.api.ai_optimization_api import AiOptimizationApi
+from dataforseo_client.rest import ApiException
+
+from pprint import pprint
+try:
+    # Configure HTTP basic authorization: basicAuth
+    configuration = dfs_config.Configuration(username='USERNAME',password='PASSWORD')
+
+
+
+    with dfs_api_provider.ApiClient(configuration) as api_client:
+        # Create an instance of the API class
+        ai_optimization_api = AiOptimizationApi(api_client)
+
+        response = ai_optimization_api.perplexity_llm_responses_models()
+except ApiException as e:
+    print("Exception: %s\n" % e)
+```
+
+### Parameters
+
+
+    
+        This endpoint does not need any parameter.
+    
+
+
+### Return type
+
+[**AiOptimizationPerplexityLlmResponsesModelsResponseInfo**](AiOptimizationPerplexityLlmResponsesModelsResponseInfo.md)
+
+### Authorization
+
+[basicAuth](../README.md#basicAuth)
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | Successful operation |  -  |
+
+<a id="perplexityLlmResponsesLive"></a>
+# **perplexityLlmResponsesLive**
+> AiOptimizationPerplexityLlmResponsesLiveResponseInfo perplexityLlmResponsesLive()
+
+
+### Example
+```python
+from dataforseo_client import configuration as dfs_config, api_client as dfs_api_provider
+from dataforseo_client.api.ai_optimization_api import AiOptimizationApi
+from dataforseo_client.rest import ApiException
+from dataforseo_client.models.list_optional_ai_optimization_perplexity_llm_responses_live_request_info import List[Optional[AiOptimizationPerplexityLlmResponsesLiveRequestInfo]]
+
+from pprint import pprint
+try:
+    # Configure HTTP basic authorization: basicAuth
+    configuration = dfs_config.Configuration(username='USERNAME',password='PASSWORD')
+
+
+
+    with dfs_api_provider.ApiClient(configuration) as api_client:
+        # Create an instance of the API class
+        ai_optimization_api = AiOptimizationApi(api_client)
+
+        response = ai_optimization_api.perplexity_llm_responses_live([AiOptimizationPerplexityLlmResponsesLiveRequestInfo(
+                system_message="communicate as if we are in a business meeting",
+                message_chain=[
+                    LlmMessageChainItem(
+                        role="user",
+                        message="Hello, what’s up?",
+                    ),
+                    LlmMessageChainItem(
+                        role="ai",
+                        message="Hello! I’m doing well, thank you. How can I assist you today? Are there any specific topics or projects you’d like to discuss in our meeting?",
+                    ),
+                    ],
+                max_output_tokens=200,
+                temperature=0.3,
+                top_p=0.5,
+                web_search_country_iso_code="FR",
+                model_name="sonar",
+                user_prompt="provide information on how relevant the amusement park business is in France now",
+        )]
+        )
+except ApiException as e:
+    print("Exception: %s\n" % e)
+```
+
+### Parameters
+
+    | Name | Type | Description  | Notes |
+    |------------- | ------------- | ------------- | -------------|
+    | **** | [**List&lt;List[Optional[AiOptimizationPerplexityLlmResponsesLiveRequestInfo]]&gt;**](List[Optional[AiOptimizationPerplexityLlmResponsesLiveRequestInfo]].md)|  | [optional] |
+
+
+
+### Return type
+
+[**AiOptimizationPerplexityLlmResponsesLiveResponseInfo**](AiOptimizationPerplexityLlmResponsesLiveResponseInfo.md)
+
+### Authorization
+
+[basicAuth](../README.md#basicAuth)
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | Successful operation |  -  |
+
 <a id="geminiLlmScraperLocations"></a>
 # **geminiLlmScraperLocations**
 > AiOptimizationGeminiLlmScraperLocationsResponseInfo geminiLlmScraperLocations()
@@ -1898,132 +2024,6 @@ except ApiException as e:
 ### Return type
 
 [**AiOptimizationGeminiLlmScraperLiveHtmlResponseInfo**](AiOptimizationGeminiLlmScraperLiveHtmlResponseInfo.md)
-
-### Authorization
-
-[basicAuth](../README.md#basicAuth)
-
-### HTTP request headers
-
-- **Content-Type**: application/json
-- **Accept**: application/json
-
-### HTTP response details
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-| **200** | Successful operation |  -  |
-
-<a id="perplexityLlmResponsesModels"></a>
-# **perplexityLlmResponsesModels**
-> AiOptimizationPerplexityLlmResponsesModelsResponseInfo perplexityLlmResponsesModels()
-
-
-### Example
-```python
-from dataforseo_client import configuration as dfs_config, api_client as dfs_api_provider
-from dataforseo_client.api.ai_optimization_api import AiOptimizationApi
-from dataforseo_client.rest import ApiException
-
-from pprint import pprint
-try:
-    # Configure HTTP basic authorization: basicAuth
-    configuration = dfs_config.Configuration(username='USERNAME',password='PASSWORD')
-
-
-
-    with dfs_api_provider.ApiClient(configuration) as api_client:
-        # Create an instance of the API class
-        ai_optimization_api = AiOptimizationApi(api_client)
-
-        response = ai_optimization_api.perplexity_llm_responses_models()
-except ApiException as e:
-    print("Exception: %s\n" % e)
-```
-
-### Parameters
-
-
-    
-        This endpoint does not need any parameter.
-    
-
-
-### Return type
-
-[**AiOptimizationPerplexityLlmResponsesModelsResponseInfo**](AiOptimizationPerplexityLlmResponsesModelsResponseInfo.md)
-
-### Authorization
-
-[basicAuth](../README.md#basicAuth)
-
-### HTTP request headers
-
-- **Content-Type**: application/json
-- **Accept**: application/json
-
-### HTTP response details
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-| **200** | Successful operation |  -  |
-
-<a id="perplexityLlmResponsesLive"></a>
-# **perplexityLlmResponsesLive**
-> AiOptimizationPerplexityLlmResponsesLiveResponseInfo perplexityLlmResponsesLive()
-
-
-### Example
-```python
-from dataforseo_client import configuration as dfs_config, api_client as dfs_api_provider
-from dataforseo_client.api.ai_optimization_api import AiOptimizationApi
-from dataforseo_client.rest import ApiException
-from dataforseo_client.models.list_optional_ai_optimization_perplexity_llm_responses_live_request_info import List[Optional[AiOptimizationPerplexityLlmResponsesLiveRequestInfo]]
-
-from pprint import pprint
-try:
-    # Configure HTTP basic authorization: basicAuth
-    configuration = dfs_config.Configuration(username='USERNAME',password='PASSWORD')
-
-
-
-    with dfs_api_provider.ApiClient(configuration) as api_client:
-        # Create an instance of the API class
-        ai_optimization_api = AiOptimizationApi(api_client)
-
-        response = ai_optimization_api.perplexity_llm_responses_live([AiOptimizationPerplexityLlmResponsesLiveRequestInfo(
-                system_message="communicate as if we are in a business meeting",
-                message_chain=[
-                    LlmMessageChainItem(
-                        role="user",
-                        message="Hello, what’s up?",
-                    ),
-                    LlmMessageChainItem(
-                        role="ai",
-                        message="Hello! I’m doing well, thank you. How can I assist you today? Are there any specific topics or projects you’d like to discuss in our meeting?",
-                    ),
-                    ],
-                max_output_tokens=200,
-                temperature=0.3,
-                top_p=0.5,
-                web_search_country_iso_code="FR",
-                model_name="sonar",
-                user_prompt="provide information on how relevant the amusement park business is in France now",
-        )]
-        )
-except ApiException as e:
-    print("Exception: %s\n" % e)
-```
-
-### Parameters
-
-    | Name | Type | Description  | Notes |
-    |------------- | ------------- | ------------- | -------------|
-    | **** | [**List&lt;List[Optional[AiOptimizationPerplexityLlmResponsesLiveRequestInfo]]&gt;**](List[Optional[AiOptimizationPerplexityLlmResponsesLiveRequestInfo]].md)|  | [optional] |
-
-
-
-### Return type
-
-[**AiOptimizationPerplexityLlmResponsesLiveResponseInfo**](AiOptimizationPerplexityLlmResponsesLiveResponseInfo.md)
 
 ### Authorization
 

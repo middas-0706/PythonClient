@@ -21,7 +21,10 @@
 **instant_pages** | **StrictFloat** |  |[optional]|
 **redirect_chains** | **StrictFloat** |  |[optional]|
 **lighthouse** | **AppendixInfo** |  |[optional]|
+**available_filters** | **StrictFloat** |  |[optional]|
 **keyword_density** | **StrictFloat** |  |[optional]|
 **page_screenshot** | **StrictFloat** |  |[optional]|
 **content_parsing** | **StrictFloat** |  |[optional]|
 **content_parsing_live** | **StrictFloat** |  |[optional]|
+**id_list** | **StrictFloat** |  |[optional]|
+**uncrawlable_resources** | **StrictFloat** |  |[optional]|

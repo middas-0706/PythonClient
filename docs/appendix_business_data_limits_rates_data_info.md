@@ -9,9 +9,9 @@
 **locations** | **StrictFloat** |  |[optional]|
 **languages** | **StrictFloat** |  |[optional]|
 **errors** | **StrictFloat** |  |[optional]|
-**yelp** | **AppendixBusinessDataDayLimitsRatesDataInfo** |  |[optional]|
-**social_media** | **AppendixSocialMediaBusinessDataLimitsRatesDataInfo** |  |[optional]|
-**tripadvisor** | **AppendixBusinessDataDayLimitsRatesDataInfo** |  |[optional]|
-**trustpilot** | **AppendixBusinessDataDayLimitsRatesDataInfo** |  |[optional]|
+**tripadvisor** | **AppendixTrBusinessDataDayLimitsRatesDataInfo** |  |[optional]|
+**trustpilot** | **AppendixTrBusinessDataDayLimitsRatesDataInfo** |  |[optional]|
+**id_list** | **StrictFloat** |  |[optional]|
 **business_listings** | **AppendixBusinessListingsBusinessDataLimitsRatesDataInfo** |  |[optional]|
+**available_filters** | **StrictFloat** |  |[optional]|
 **tasks_ready** | **StrictFloat** |  |[optional]|

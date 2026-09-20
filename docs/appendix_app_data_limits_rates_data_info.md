@@ -13,5 +13,7 @@
 **languages** | **StrictFloat** |  |[optional]|
 **locations** | **StrictFloat** |  |[optional]|
 **categories** | **StrictFloat** |  |[optional]|
-**app_listings** | **AppendixBusinessListingsBusinessDataLimitsRatesDataInfo** |  |[optional]|
+**id_list** | **StrictFloat** |  |[optional]|
+**app_listings** | **AppendixTrBusinessDataDayLimitsRatesDataInfo** |  |[optional]|
+**pp_listings** | **AppendixDataforseoLabsLimitsRatesDataInfo** |  |[optional]|
 **tasks_ready** | **StrictFloat** |  |[optional]|

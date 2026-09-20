@@ -15,3 +15,5 @@
 **tasks_fixed** | **StrictFloat** |  |[optional]|
 **jobs** | **AppendixJobsSerpLimitsRatesDataInfo** |  |[optional]|
 **screenshot** | **StrictFloat** |  |[optional]|
+**id_list** | **StrictFloat** |  |[optional]|
+**ai_summary** | **StrictFloat** |  |[optional]|

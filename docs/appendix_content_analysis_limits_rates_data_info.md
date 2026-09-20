@@ -15,3 +15,5 @@
 **languages** | **StrictFloat** |  |[optional]|
 **categories** | **StrictFloat** |  |[optional]|
 **errors** | **StrictFloat** |  |[optional]|
+**available_filters** | **StrictFloat** |  |[optional]|
+**id_list** | **StrictFloat** |  |[optional]|

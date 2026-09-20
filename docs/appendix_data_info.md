@@ -28,10 +28,8 @@
 **total_app_data** | **StrictFloat** |  |[optional]|
 **content_analysis** | **AppendixContentAnalysisLimitsRatesDataInfo** |  |[optional]|
 **total_content_analysis** | **StrictFloat** |  |[optional]|
-**content_generation** | **AppendixContentGenerationLimitsRatesDataInfo** |  |[optional]|
-**total_content_generation** | **StrictFloat** |  |[optional]|
-**total_traffic_analytics** | **StrictFloat** |  |[optional]|
-**traffic_analytics** | **AppendixSerpDaysRatesDataInfo** |  |[optional]|
+**ai_optimization** | **AppendixAiOptimizationLimitsRatesDataInfo** |  |[optional]|
+**total_ai_optimization** | **StrictFloat** |  |[optional]|
 **total_reviews** | **StrictFloat** |  |[optional]|
 **reviews** | **AppendixSerpDaysRatesDataInfo** |  |[optional]|
 **total_social** | **StrictFloat** |  |[optional]|

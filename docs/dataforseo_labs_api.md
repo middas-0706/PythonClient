@@ -772,7 +772,6 @@ try:
         dataforseo_labs_api = DataforseoLabsApi(api_client)
 
         response = dataforseo_labs_api.google_search_intent_live([DataforseoLabsGoogleSearchIntentLiveRequestInfo(
-                language_code="en",
                 keywords=[
                     "login page",
                     "audi a7",
